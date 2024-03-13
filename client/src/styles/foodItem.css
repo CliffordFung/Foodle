@@ -1,0 +1,21 @@
+.food-container {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+}
+
+.food-container img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 12px;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  margin: 48px 0;
+}
+
+.inline input {
+  width: 300px;
+}

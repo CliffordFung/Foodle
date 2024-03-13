@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import FoodItem from './components/FoodItem'
+import './styles/App.css'
 
-function App() {
-  const [data, setData] = useState([])
+export default function App() {
+  const [foodItem, setFoodItem] = useState({})
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('/foodItem')
         const res = response.json()
-        setData(res)
+        setFoodItem(res)
       } catch (err) {
         console.error(err)
       }
@@ -17,11 +19,11 @@ function App() {
   }, [])
 
   return (
-    <div>
-      hello
-      <div>da</div>
+    <div className="root">
+      <div className="container">
+        <h1>Foodle</h1>
+        <FoodItem foodData={foodItem} />
+      </div>
     </div>
   )
 }
-
-export default App
