@@ -1,12 +1,9 @@
 .root {
-  background-color: lightblue;
-  height: 100vh;
+  padding: 96px;
 }
 
-.container {
-  padding: 96px;
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }

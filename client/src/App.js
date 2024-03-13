@@ -9,7 +9,7 @@ export default function App() {
     const fetchData = async () => {
       try {
         const response = await fetch('/foodItem')
-        const res = response.json()
+        const res = await response.json()
         setFoodItem(res)
       } catch (err) {
         console.error(err)
@@ -20,10 +20,11 @@ export default function App() {
 
   return (
     <div className="root">
-      <div className="container">
+      <div className="title">
         <h1>Foodle</h1>
-        <FoodItem foodData={foodItem} />
+        <h2>Guess the name of popular dishes around the world!</h2>
       </div>
+      <FoodItem foodData={foodItem} />
     </div>
   )
 }

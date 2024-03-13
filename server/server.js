@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const foodItemsRouter = require('./routes/foodItems')
 
 const app = express()
-const PORT = 5000
+const PORT = 3001
 
 mongoose
   .connect(process.env.DATABASE_URL)
