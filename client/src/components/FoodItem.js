@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Confetti from 'react-confetti'
 import '../styles/foodItem.css'
 
 export default function FoodItem({ foodData }) {
@@ -7,6 +8,7 @@ export default function FoodItem({ foodData }) {
   const [showLetters, setShowLetters] = useState(false)
   const [input, setInput] = useState('')
   const [submittedAnswer, setSubmittedAnswer] = useState(undefined)
+  const [lettersHint, setLettersHint] = useState('')
 
   useEffect(() => {
     setShowOrigin(false)
@@ -14,6 +16,16 @@ export default function FoodItem({ foodData }) {
     setShowLetters(false)
     setInput('')
     setSubmittedAnswer(undefined)
+
+    const replaceLetters = foodData.name
+      ?.split(' ')
+      .map((word) => {
+        const firstLetter = word.charAt(0)
+        const remainingLetters = word.slice(1).replace(/./g, ' _ ')
+        return firstLetter + remainingLetters
+      })
+      .join('   ')
+    setLettersHint(replaceLetters)
   }, [foodData])
 
   function handleInputChange(e) {
@@ -23,7 +35,10 @@ export default function FoodItem({ foodData }) {
   function handleSubmit() {
     if (input.toLowerCase() === foodData.name.toLowerCase()) {
       setSubmittedAnswer(
-        <span>That's correct! The answer is {foodData.name}</span>
+        <>
+          <Confetti recycle={false} numberOfPieces={300} tweenDuration={5000} />
+          <span>That's correct! The answer is {foodData.name}</span>
+        </>
       )
     } else {
       setSubmittedAnswer(<span>{input} is not correct. Try again!</span>)
@@ -86,7 +101,7 @@ export default function FoodItem({ foodData }) {
           <div className="hint-item">
             <label>Starting Letters:</label>
             {showLetters ? (
-              <span>{foodData.name}</span>
+              <span style={{ whiteSpace: 'pre' }}>{lettersHint}</span>
             ) : (
               <div>
                 <button onClick={() => setShowLetters(true)}>
