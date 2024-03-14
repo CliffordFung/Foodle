@@ -40,18 +40,20 @@ export default function FoodItem({ foodData }) {
       <div className="food-container">
         <img src="logo512.png" alt="Food Item" />
       </div>
-      <div className="guess-container">
-        <label htmlFor="food-input">Guess:</label>
-        <input
-          type="text"
-          id="food-input"
-          onChange={handleInputChange}
-          value={input}
-        />
-        <button onClick={handleSubmit}>Submit</button>
-        <button onClick={handleShowAnswer} style={{ marginLeft: '12px' }}>
-          Give Up?
-        </button>
+      <div className="guess-layout">
+        <div className="guess-container">
+          <label htmlFor="food-input">Guess:</label>
+          <input
+            type="text"
+            id="food-input"
+            onChange={handleInputChange}
+            value={input}
+          />
+          <button onClick={handleSubmit}>Submit</button>
+          <button onClick={handleShowAnswer} style={{ marginLeft: '12px' }}>
+            Give Up?
+          </button>
+        </div>
       </div>
       <div className="answer-container">{submittedAnswer}</div>
       <div className="hint-layout">

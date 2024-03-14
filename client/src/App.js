@@ -21,9 +21,13 @@ export default function App() {
 
   return (
     <div className="root">
-      <div className="center-container">
-        <h1>Foodle</h1>
-        <h2>Guess the name of popular dishes around the world!</h2>
+      <div className="header">
+        <img src="hamburger.png" alt="Hamburger Icon" />
+        <div className="center-container">
+          <h1>Foodle</h1>
+          <h2>Guess the name of popular dishes around the world!</h2>
+        </div>
+        <img src="fries.png" alt="Hamburger Icon" />
       </div>
       <FoodItem foodData={foodItem} />
       <div className="dish-button-container">

@@ -11,10 +11,16 @@
   margin: 12px;
 }
 
-.guess-container {
+.guess-layout {
   display: flex;
   justify-content: center;
   margin: 24px 0 12px 0;
+}
+
+.guess-container {
+  display: flex;
+  justify-content: center;
+  width: 600px;
 }
 
 .guess-container input {
@@ -28,6 +34,7 @@
 }
 
 .hint-layout {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,4 +48,36 @@
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 8px;
+}
+
+@media (max-width: 550px) {
+  .hint-container {
+    width: 350px;
+  }
+  .guess-container {
+    width: 400px;
+  }
+  .guess-container input {
+    width: 150px;
+  }
+  .food-container img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 300px) {
+  .hint-container {
+    width: 200px;
+  }
+  .guess-container {
+    width: 200px;
+  }
+  .guess-container input {
+    width: 80px;
+  }
+  .food-container img {
+    max-width: 150px;
+    max-height: 150px;
+  }
 }
