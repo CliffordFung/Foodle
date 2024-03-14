@@ -13,13 +13,18 @@
 
 .guess-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin: 48px 0;
+  margin: 24px 0 12px 0;
 }
 
 .guess-container input {
+  margin: 0 4px 0 8px;
   width: 300px;
+}
+
+.answer-container {
+  display: flex;
+  justify-content: center;
 }
 
 .hint-layout {
@@ -32,7 +37,7 @@
 }
 
 .hint-item {
-  margin: 8px 0;
+  margin: 12px 0;
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 8px;
