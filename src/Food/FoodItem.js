@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Confetti from 'react-confetti'
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
 import '../styles/foodItem.css'
 
 export default function FoodItem({ foodData }) {
@@ -53,7 +56,9 @@ export default function FoodItem({ foodData }) {
   return (
     <div>
       <div className="food-container">
-        <img src={foodData?.imgUrl} alt="Food Item" />
+        <Zoom>
+          <img src={foodData?.imgUrl} alt="Food Item" />
+        </Zoom>
       </div>
       <div className="guess-layout">
         <div className="guess-container">
