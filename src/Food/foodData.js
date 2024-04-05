@@ -2,7 +2,7 @@ export const FOOD_ITEMS = [
   {
     name: 'Pad Thai',
     origin: 'Thailand',
-    imgUrl: '123.png',
+    imgUrl: 'assets/logo512.png',
     ingredients: [
       'rice noodle',
       'eggs',
@@ -22,7 +22,7 @@ export const FOOD_ITEMS = [
   {
     name: 'Lomo Saltado',
     origin: 'Peru',
-    imgUrl: '123.png',
+    imgUrl: 'assets/logo512.png',
     ingredients: [
       'beef',
       'rice',

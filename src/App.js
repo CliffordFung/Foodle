@@ -19,7 +19,8 @@ export default function App() {
 
     setCache(cache.add(randomIndex))
     setFoodItem(FOOD_ITEMS[randomIndex])
-  }, [isLoadNewDish, cache])
+    // eslint-disable-next-line
+  }, [isLoadNewDish])
 
   return (
     <div className="root">
