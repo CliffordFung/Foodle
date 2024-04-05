@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import FoodItem from './components/FoodItem'
+import FoodItem from './Food/FoodItem'
 import './styles/App.css'
+import { FOOD_ITEMS } from './Food/foodData'
 
 export default function App() {
   const [foodItem, setFoodItem] = useState({})
+  const [cache, setCache] = useState(new Set())
   const [isLoadNewDish, setIsLoadNewDish] = useState(false)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/foodItem')
-        const res = await response.json()
-        setFoodItem(res)
-      } catch (err) {
-        console.error(err)
-      }
+    if (cache.size === FOOD_ITEMS.length) {
+      setCache(cache.clear())
     }
-    fetchData()
-  }, [isLoadNewDish])
+    let randomIndex
+    do {
+      randomIndex = Math.floor(Math.random() * FOOD_ITEMS.length)
+    } while (cache.has(randomIndex))
+
+    setCache(cache.add(randomIndex))
+    setFoodItem(FOOD_ITEMS[randomIndex])
+  }, [isLoadNewDish, cache])
 
   return (
     <div className="root">

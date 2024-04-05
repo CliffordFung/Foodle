@@ -53,7 +53,7 @@ export default function FoodItem({ foodData }) {
   return (
     <div>
       <div className="food-container">
-        <img src="logo512.png" alt="Food Item" />
+        <img src={require('./assets/logo512.png')} alt="Food Item" />
       </div>
       <div className="guess-layout">
         <div className="guess-container">
